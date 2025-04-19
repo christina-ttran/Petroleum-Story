@@ -1,0 +1,43 @@
+
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  background-color: #fdfdfd;
+  color: #222;
+}
+
+main {
+  width: 90%;
+  margin: auto;
+  max-width: 900px;
+}
+
+.story-block {
+  padding: 80px 0;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.story-block h2 {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+}
+
+.media-placeholder {
+  height: 200px;
+  background: #eee;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  margin-top: 20px;
+}
+
+label {
+  display: block;
+  margin: 5px 0;
+}

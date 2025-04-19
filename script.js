@@ -1,0 +1,78 @@
+
+const foodData = {
+  "Shrimp (wild)": 220,
+  "Tropical fruit": 115,
+  "Beef (feedlots)": 90,
+  "Chicken": 30,
+  "Eggs": 18,
+  "Milk": 5
+};
+
+const transportationData = {
+  "Car (gasoline)": 4.852,
+  "Bus": 1.3197,
+  "Flight": 17.21998,
+  "Train (diesel)": 1.2,
+  "Bike/Walk": 0
+};
+
+const clothingData = {
+  "Polyester T-shirt": 18,
+  "Cotton T-shirt": 8,
+  "Jeans": 75,
+  "Running Shoes": 85
+};
+
+const techData = {
+  "Smartphone": 1400,
+  "Laptop": 1800,
+  "Tablet": 750,
+  "Daily use (generic)": 10
+};
+
+let totalMJ = 0;
+
+function updateTotal() {
+  document.getElementById("total-result").textContent = `Total: ${totalMJ.toFixed(2)} MJ`;
+}
+
+// Food
+document.getElementById("food-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const selected = [...this.querySelectorAll("input:checked")].map(input => input.value);
+  let subtotal = selected.reduce((sum, item) => sum + (foodData[item] || 0), 0);
+  document.getElementById("food-result").textContent = `Food footprint: ${subtotal} MJ`;
+  totalMJ += subtotal;
+  updateTotal();
+});
+
+// Transport
+document.getElementById("transport-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const miles = parseFloat(document.getElementById("distance").value);
+  const mode = document.getElementById("transport-mode").value;
+  let subtotal = miles * (transportationData[mode] || 0);
+  document.getElementById("transport-result").textContent = `Transport footprint: ${subtotal.toFixed(2)} MJ`;
+  totalMJ += subtotal;
+  updateTotal();
+});
+
+// Clothing
+document.getElementById("clothing-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const selected = [...this.querySelectorAll("input:checked")].map(input => input.value);
+  let subtotal = selected.reduce((sum, item) => sum + (clothingData[item] || 0), 0);
+  document.getElementById("clothing-result").textContent = `Clothing footprint: ${subtotal} MJ`;
+  totalMJ += subtotal;
+  updateTotal();
+});
+
+// Technology
+document.getElementById("tech-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const selected = [...this.querySelectorAll("input:checked")].map(input => input.value);
+  let subtotal = selected.reduce((sum, item) => sum + (techData[item] || 0), 0);
+  document.getElementById("tech-result").textContent = `Technology footprint: ${subtotal} MJ`;
+  totalMJ += subtotal;
+  updateTotal();
+});

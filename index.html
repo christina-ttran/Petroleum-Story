@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Petroleum Footprint Story</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body> 
+  <main>
+
+    <section class="story-block" id="food">
+      <h2>Food and Fossil Fuels</h2>
+      <p>Our food systems are powered by petroleum—from fertilizers to transportation. Scroll to explore how each item you eat contributes to your energy footprint.</p>
+      <div class="media-placeholder">[Food Visuals/Graphs]</div>
+      <form id="food-form">
+        <h3>What did you eat today?</h3>
+        <label><input type="checkbox" value="Shrimp (wild)"> Shrimp (wild)</label>
+        <label><input type="checkbox" value="Tropical fruit"> Tropical fruit</label>
+        <label><input type="checkbox" value="Beef (feedlots)"> Beef (feedlots)</label>
+        <label><input type="checkbox" value="Chicken"> Chicken</label>
+        <label><input type="checkbox" value="Eggs"> Eggs</label>
+        <label><input type="checkbox" value="Milk"> Milk</label>
+        <button type="submit">Calculate</button>
+        <p id="food-result"></p>
+      </form>
+    </section>
+
+    <section class="story-block" id="transportation">
+      <h2>Transportation</h2>
+      <p>How we move every day burns fossil fuels in varying amounts. Enter how far you traveled today and your mode of transportation.</p>
+      <div class="media-placeholder">[Transportation Visuals/Graphs]</div>
+      <form id="transport-form">
+        <label>Distance (in miles): <input type="number" id="distance" required></label>
+        <select id="transport-mode">
+          <option value="Car (gasoline)">Car (gasoline)</option>
+          <option value="Bus">Bus</option>
+          <option value="Flight">Flight</option>
+          <option value="Train (diesel)">Train (diesel)</option>
+          <option value="Bike/Walk">Bike/Walk</option>
+        </select>
+        <button type="submit">Calculate</button>
+        <p id="transport-result"></p>
+      </form>
+    </section>
+
+    <section class="story-block" id="clothing">
+      <h2>Clothing</h2>
+      <p>The fashion industry uses petroleum at every stage—from synthetic fibers to global shipping.</p>
+      <div class="media-placeholder">[Clothing Visuals/Graphs]</div>
+      <form id="clothing-form">
+        <h3>What did you wear today?</h3>
+        <label><input type="checkbox" value="Polyester T-shirt"> Polyester T-shirt</label>
+        <label><input type="checkbox" value="Cotton T-shirt"> Cotton T-shirt</label>
+        <label><input type="checkbox" value="Jeans"> Jeans</label>
+        <label><input type="checkbox" value="Running Shoes"> Running Shoes</label>
+        <button type="submit">Calculate</button>
+        <p id="clothing-result"></p>
+      </form>
+    </section>
+
+    <section class="story-block" id="technology">
+      <h2>Technology</h2>
+      <p>From smartphones to servers, our tech habits carry a hidden petroleum cost.</p>
+      <div class="media-placeholder">[Technology Visuals/Graphs]</div>
+      <form id="tech-form">
+        <h3>Which devices did you use today?</h3>
+        <label><input type="checkbox" value="Smartphone"> Smartphone</label>
+        <label><input type="checkbox" value="Laptop"> Laptop</label>
+        <label><input type="checkbox" value="Tablet"> Tablet</label>
+        <label><input type="checkbox" value="Daily use (generic)"> Daily use (generic)</label>
+        <button type="submit">Calculate</button>
+        <p id="tech-result"></p>
+      </form>
+    </section>
+
+    <section class="story-block" id="conclusion">
+      <h2>Your Total Petroleum Footprint</h2>
+      <p>This number reflects the petroleum energy your day required based on your choices across food, travel, clothing, and technology.</p>
+      <h3 id="total-result">Total: 0 MJ</h3>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
