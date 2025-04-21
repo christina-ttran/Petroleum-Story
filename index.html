@@ -15,12 +15,15 @@
       <div class="media-placeholder">[Food Visuals/Graphs]</div>
       <form id="food-form">
         <h3>What did you eat today?</h3>
-        <label><input type="checkbox" value="Shrimp (wild)"> Shrimp (wild)</label>
-        <label><input type="checkbox" value="Tropical fruit"> Tropical fruit</label>
-        <label><input type="checkbox" value="Beef (feedlots)"> Beef (feedlots)</label>
-        <label><input type="checkbox" value="Chicken"> Chicken</label>
-        <label><input type="checkbox" value="Eggs"> Eggs</label>
-        <label><input type="checkbox" value="Milk"> Milk</label>
+        <label for="food-select">Select food items:</label>
+        <select id="food-select" multiple>
+          <option value="Shrimp (wild)">Shrimp (wild)</option>
+          <option value="Tropical fruit">Tropical fruit</option>
+          <option value="Beef (feedlots)">Beef (feedlots)</option>
+          <option value="Chicken">Chicken</option>
+          <option value="Eggs">Eggs</option>
+          <option value="Milk">Milk</option>
+        </select>
         <button type="submit">Calculate</button>
         <p id="food-result"></p>
       </form>
@@ -50,10 +53,13 @@
       <div class="media-placeholder">[Clothing Visuals/Graphs]</div>
       <form id="clothing-form">
         <h3>What did you wear today?</h3>
-        <label><input type="checkbox" value="Polyester T-shirt"> Polyester T-shirt</label>
-        <label><input type="checkbox" value="Cotton T-shirt"> Cotton T-shirt</label>
-        <label><input type="checkbox" value="Jeans"> Jeans</label>
-        <label><input type="checkbox" value="Running Shoes"> Running Shoes</label>
+        <label for="clothing-select">Select clothing items:</label>
+        <select id="clothing-select" multiple>
+          <option value="Polyester T-shirt">Polyester T-shirt</option>
+          <option value="Cotton T-shirt">Cotton T-shirt</option>
+          <option value="Jeans">Jeans</option>
+          <option value="Running Shoes">Running Shoes</option>
+        </select>
         <button type="submit">Calculate</button>
         <p id="clothing-result"></p>
       </form>
@@ -65,10 +71,13 @@
       <div class="media-placeholder">[Technology Visuals/Graphs]</div>
       <form id="tech-form">
         <h3>Which devices did you use today?</h3>
-        <label><input type="checkbox" value="Smartphone"> Smartphone</label>
-        <label><input type="checkbox" value="Laptop"> Laptop</label>
-        <label><input type="checkbox" value="Tablet"> Tablet</label>
-        <label><input type="checkbox" value="Daily use (generic)"> Daily use (generic)</label>
+        <label for="tech-select">Select devices:</label>
+        <select id="tech-select" multiple>
+          <option value="Smartphone">Smartphone</option>
+          <option value="Laptop">Laptop</option>
+          <option value="Tablet">Tablet</option>
+          <option value="Daily use (generic)">Daily use (generic)</option>
+        </select>
         <button type="submit">Calculate</button>
         <p id="tech-result"></p>
       </form>
