@@ -51,7 +51,7 @@
       <div class="media-placeholder">[Transportation Visuals/Graphs]</div>
       <form id="transport-form">
         <label>Distance (in miles): <input type="number" id="distance" required></label>
-        <select id="transport-mode">
+        <select id="transport-mode" multiple>
           <option value="Car (gasoline)">Car (gasoline)</option>
           <option value="Bus">Bus</option>
           <option value="Flight">Flight</option>
@@ -111,5 +111,13 @@
   </main>
 
   <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      new Choices('#food-select', { removeItemButton: true });
+      new Choices('#transport-mode', { removeItemButton: true });
+      new Choices('#clothing-select', { removeItemButton: true });
+      new Choices('#tech-select', { removeItemButton: true });
+    });
+  </script>
 </body>
 </html>

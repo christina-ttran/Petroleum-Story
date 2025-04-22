@@ -1,4 +1,3 @@
-
 // Define food data
 const foodData = {
   "Shrimp (wild)": 220,
@@ -85,9 +84,9 @@ function updateTotal() {
 // Food
 document.getElementById("food-form").addEventListener("submit", function(e) {
   e.preventDefault();
-  const selected = [...this.querySelectorAll("input:checked")].map(input => input.value);
-  let subtotal = selected.reduce((sum, item) => sum + (foodData[item] || 0), 0);
-  document.getElementById("food-result").textContent = `Food footprint: ${subtotal} MJ`;
+  const selectedItems = [...document.querySelectorAll("#food-select option:checked")].map(option => option.value);
+  const subtotal = selectedItems.reduce((sum, item) => sum + (foodData[item] || 0), 0);
+  document.getElementById("food-result").textContent = `Food petroleum footprint: ${subtotal} MJ`;
   totalMJ += subtotal;
   updateTotal();
 });
@@ -97,7 +96,7 @@ document.getElementById("transport-form").addEventListener("submit", function(e)
   e.preventDefault();
   const miles = parseFloat(document.getElementById("distance").value);
   const mode = document.getElementById("transport-mode").value;
-  let subtotal = miles * (transportationData[mode] || 0);
+  const subtotal = miles * (transportationData[mode] || 0);
   document.getElementById("transport-result").textContent = `Transport footprint: ${subtotal.toFixed(2)} MJ`;
   totalMJ += subtotal;
   updateTotal();
@@ -106,9 +105,9 @@ document.getElementById("transport-form").addEventListener("submit", function(e)
 // Clothing
 document.getElementById("clothing-form").addEventListener("submit", function(e) {
   e.preventDefault();
-  const selected = [...this.querySelectorAll("input:checked")].map(input => input.value);
-  let subtotal = selected.reduce((sum, item) => sum + (clothingData[item] || 0), 0);
-  document.getElementById("clothing-result").textContent = `Clothing footprint: ${subtotal} MJ`;
+  const selectedItems = [...document.querySelectorAll("#clothing-select option:checked")].map(option => option.value);
+  const subtotal = selectedItems.reduce((sum, item) => sum + (clothingData[item] || 0), 0);
+  document.getElementById("clothing-result").textContent = `Clothing petroleum footprint: ${subtotal} MJ`;
   totalMJ += subtotal;
   updateTotal();
 });
@@ -116,9 +115,9 @@ document.getElementById("clothing-form").addEventListener("submit", function(e) 
 // Technology
 document.getElementById("tech-form").addEventListener("submit", function(e) {
   e.preventDefault();
-  const selected = [...this.querySelectorAll("input:checked")].map(input => input.value);
-  let subtotal = selected.reduce((sum, item) => sum + (techData[item] || 0), 0);
-  document.getElementById("tech-result").textContent = `Technology footprint: ${subtotal} MJ`;
+  const selectedItems = [...document.querySelectorAll("#tech-select option:checked")].map(option => option.value);
+  const subtotal = selectedItems.reduce((sum, item) => sum + (techData[item] || 0), 0);
+  document.getElementById("tech-result").textContent = `Technology petroleum footprint: ${subtotal} MJ`;
   totalMJ += subtotal;
   updateTotal();
 });
