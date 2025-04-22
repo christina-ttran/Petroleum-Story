@@ -3,10 +3,25 @@
 const foodData = {
   "Shrimp (wild)": 220,
   "Tropical fruit": 115,
+  "Salmon (farmed)": 84,
   "Beef (feedlots)": 90,
+  "Beef (frozen)": 75,
+  "Tomatoes (greenhouse)": 66,
+  "Pork": 47.5,
+  "Pork (frozen)": 43,
   "Chicken": 30,
+  "Chicken (frozen)": 41,
+  "Herring (wild)": 22,
+  "Clams": 19,
   "Eggs": 18,
-  "Milk": 5
+  "Apples (imported)": 8.6,
+  "Soybeans": 7.9,
+  "Honey (imported)": 5.6,
+  "Tomatoes (fresh)": 5.4,
+  "Milk": 5,
+  "Apples (local)": 3.5,
+  "Laying hens": 475,
+  "Grains": 35.61,
 };
 
 // Initialize Choices.js on the food select element
@@ -45,10 +60,13 @@ const transportationData = {
 };
 
 const clothingData = {
-  "Polyester T-shirt": 18,
-  "Cotton T-shirt": 8,
-  "Jeans": 75,
-  "Running Shoes": 85
+  "Nylon": 250,
+  "Acrylic": 175,
+  "Polyester": 125,
+  "Polypropylene": 115,
+  "Viscose": 100,
+  "Wool": 63,
+  "Cotton": 55,
 };
 
 const techData = {
