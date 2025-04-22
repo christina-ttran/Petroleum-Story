@@ -9,6 +9,14 @@ body {
   scroll-behavior: smooth;
 }
 
+h1 {
+  margin-bottom: 0; /* Remove extra space below the title */
+}
+
+p {
+  margin-top: 0; /* Remove extra space above the paragraph */
+}
+
 main {
   width: 90%;
   max-width: 900px;
@@ -73,7 +81,7 @@ button:hover {
   background-color: #ffbcd4;
 }
 
-.media-placeholder {
+media-placeholder {
   height: 220px;
   background: #f3f3f3;
   border: 2px dashed #d1d1d1;
