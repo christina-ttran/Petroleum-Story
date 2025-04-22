@@ -1,4 +1,5 @@
 
+// Define food data
 const foodData = {
   "Shrimp (wild)": 220,
   "Tropical fruit": 115,
@@ -7,6 +8,33 @@ const foodData = {
   "Eggs": 18,
   "Milk": 5
 };
+
+// Initialize Choices.js on the food select element
+const foodSelect = document.getElementById("food-select");
+const choices = new Choices(foodSelect, {
+  removeItemButton: true,
+  placeholderValue: 'Select food items',
+  searchPlaceholderValue: 'Type to search',
+});
+
+// Populate the select with food options
+Object.keys(foodData).forEach(item => {
+  const option = document.createElement("option");
+  option.value = item;
+  option.text = item;
+  foodSelect.appendChild(option);
+});
+
+// Handle form submission
+document.getElementById("food-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const selectedItems = choices.getValue(true); // array of selected values
+  const subtotal = selectedItems.reduce((sum, item) => sum + (foodData[item] || 0), 0);
+  document.getElementById("food-result").textContent = `Food petroleum footprint: ${subtotal} MJ`;
+  totalMJ += subtotal;
+  updateTotal();
+});
+
 
 const transportationData = {
   "Car (gasoline)": 4.852,
