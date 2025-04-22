@@ -9,13 +9,6 @@ body {
   scroll-behavior: smooth;
 }
 
-h1 {
-  margin-bottom: 0; /* Remove extra space below the title */
-}
-
-p {
-  margin-top: 0; /* Remove extra space above the paragraph */
-}
 
 main {
   width: 90%;
