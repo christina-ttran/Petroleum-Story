@@ -77,17 +77,12 @@ const techData = {
 
 let totalMJ = 0;
 
-function updateTotal() {
-  document.getElementById("total-result").textContent = `Total: ${totalMJ.toFixed(2)} MJ`;
-}
-
 // Food
 document.getElementById("food-form").addEventListener("submit", function(e) {
   e.preventDefault();
   const selectedItems = [...document.querySelectorAll("#food-select option:checked")].map(option => option.value);
   const subtotal = selectedItems.reduce((sum, item) => sum + (foodData[item] || 0), 0);
   document.getElementById("food-result").textContent = `Food petroleum footprint: ${subtotal} MJ`;
-  totalMJ += subtotal;
   updateTotal();
 });
 
@@ -95,10 +90,9 @@ document.getElementById("food-form").addEventListener("submit", function(e) {
 document.getElementById("transport-form").addEventListener("submit", function(e) {
   e.preventDefault();
   const miles = parseFloat(document.getElementById("distance").value);
-  const mode = document.getElementById("transport-mode").value;
-  const subtotal = miles * (transportationData[mode] || 0);
-  document.getElementById("transport-result").textContent = `Transport footprint: ${subtotal.toFixed(2)} MJ`;
-  totalMJ += subtotal;
+  const selectedModes = [...document.querySelectorAll("#transport-mode option:checked")].map(option => option.value);
+  const subtotal = selectedModes.reduce((sum, mode) => sum + miles * (transportationData[mode] || 0), 0);
+  document.getElementById("transport-result").textContent = `Transport petroleum footprint: ${subtotal.toFixed(2)} MJ`;
   updateTotal();
 });
 
@@ -108,7 +102,6 @@ document.getElementById("clothing-form").addEventListener("submit", function(e) 
   const selectedItems = [...document.querySelectorAll("#clothing-select option:checked")].map(option => option.value);
   const subtotal = selectedItems.reduce((sum, item) => sum + (clothingData[item] || 0), 0);
   document.getElementById("clothing-result").textContent = `Clothing petroleum footprint: ${subtotal} MJ`;
-  totalMJ += subtotal;
   updateTotal();
 });
 
@@ -118,6 +111,16 @@ document.getElementById("tech-form").addEventListener("submit", function(e) {
   const selectedItems = [...document.querySelectorAll("#tech-select option:checked")].map(option => option.value);
   const subtotal = selectedItems.reduce((sum, item) => sum + (techData[item] || 0), 0);
   document.getElementById("tech-result").textContent = `Technology petroleum footprint: ${subtotal} MJ`;
-  totalMJ += subtotal;
   updateTotal();
 });
+
+// Update total footprint
+function updateTotal() {
+  const foodFootprint = parseFloat(document.getElementById("food-result").textContent.match(/[\d.]+/) || 0);
+  const transportFootprint = parseFloat(document.getElementById("transport-result").textContent.match(/[\d.]+/) || 0);
+  const clothingFootprint = parseFloat(document.getElementById("clothing-result").textContent.match(/[\d.]+/) || 0);
+  const techFootprint = parseFloat(document.getElementById("tech-result").textContent.match(/[\d.]+/) || 0);
+
+  const total = foodFootprint + transportFootprint + clothingFootprint + techFootprint;
+  document.getElementById("total-result").textContent = `Total: ${total.toFixed(2)} MJ`;
+}
