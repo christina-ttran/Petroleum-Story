@@ -1,43 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap');
 
 body {
-  font-family: 'Helvetica Neue', sans-serif;
+  font-family: 'Inconsolata', monospace;
+  background-color: #fffafc;
+  color: #222;
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
-  background-color: #fdfdfd;
-  color: #222;
 }
 
 main {
   width: 90%;
-  margin: auto;
   max-width: 900px;
+  margin: auto;
+  padding-top: 50px;
 }
 
 .story-block {
-  padding: 80px 0;
-  border-bottom: 2px solid #e0e0e0;
+  padding: 100px 0;
+  border-bottom: 1px solid #dedede;
 }
 
 .story-block h2 {
   font-size: 2.5em;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.3em;
+  color: #3c3c3c;
 }
 
-.media-placeholder {
-  height: 200px;
-  background: #eee;
-  margin: 20px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.story-block p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #444;
 }
 
 form {
-  margin-top: 20px;
+  margin-top: 1.5em;
+  background-color: #e7fff5;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+form h3 {
+  margin-top: 0;
 }
 
 label {
   display: block;
-  margin: 5px 0;
+  margin: 8px 0;
+  font-weight: 500;
+}
+
+input[type="checkbox"],
+input[type="number"],
+select {
+  margin-right: 8px;
+  font-family: inherit;
+  font-size: 1em;
+}
+
+button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #ffcde6;
+  color: #222;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #ffbcd4;
+}
+
+.media-placeholder {
+  height: 220px;
+  background: #f3f3f3;
+  border: 2px dashed #d1d1d1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+  color: #888;
+  font-style: italic;
+}
+
+#total-result {
+  font-size: 1.8em;
+  color: #3c3c3c;
+  margin-top: 20px;
 }
